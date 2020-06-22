@@ -16,7 +16,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return (a / b).toFixed(3);
+    if (a - Math.floor(a) != 0 || b - Math.floor(b) != 0) {
+        return (a / b).toFixed(3);
+    } else {
+        return a / b;
+    }
 }
 
 function mod(a, b) {
@@ -63,9 +67,9 @@ function saveButtonChoice(e) {
         } else if (buttonChoice == "Backspace") {
             currNum = "";
             displayOutput.value.replace("Backspace", "");
-            displayOutput.value = displayOutput.value.substring(0, displayOutput.value.length-1);
+            displayOutput.value = displayOutput.value.substring(0, displayOutput.value.length - 1);
             console.log(equation);
-            
+
         } else {
 
             displayOutput.value += updateDisplay(displayOutput.value, buttonChoice);
